@@ -51,6 +51,8 @@ p {
 
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 body {
@@ -180,18 +182,6 @@ a:hover {
     background-color: var(--ocean);
     border: none;
 }
-
-/*.benefits-list,*/
-/*.team-list {*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-
-/*.benefits-list,*/
-/*.team-list {*/
-/*    column-gap: 24px;*/
-/*    row-gap: 72px;*/
-/*}*/
 
 .team-list {
     justify-content: center;
@@ -386,44 +376,36 @@ header {
 
 }
 
+@media (min-resolution: 192dpi) {
+    .hero .container {
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-mobile@2x.jpg);
+    }
+}
+
 @media only screen and (min-width: 768px) {
+    .hero .container {
+        padding: 112px 16px;
+        background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-tab.jpg);
+    }
+    @media (min-resolution: 192dpi) {
+        .hero .container {
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-tab@2x.jpg);
+        }
+    }
+}
+
+@media only screen and (min-width: 1158px) {
     .hero .container {
         padding: 188px 16px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg.jpg);
     }
+    @media (min-resolution: 192dpi) {
+        .hero .container {
+            background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg@2x.jpg);
+        }
+    }
 }
 
-/*
-* Standart srceen dpi = 96dpi
-* Retina srceen 2x dpi = 192dpi
-*/
-/*@media (min-resolution: 192dpi) {*/
-/*    .hero .container {*/
-/*        background-image: linear-gradient(*/
-/*                rgba(17, 17, 17, 0.4),*/
-/*                rgba(17, 17, 17, 0.4)*/
-/*        ),*/
-/*        url('../images/hero/hero-bg_desk@2x.jpg');*/
-/*    }*/
-/*}*/
-/* @media only screen and (min-width: 768px) {
-  .hero .container {
-    background-image: linear-gradient(
-        rgba(17, 17, 17, 0.4),
-        rgba(17, 17, 17, 0.4)
-      ),
-      url('../images/hero/hero-bg_tab.jpg');
-  }
-  @media (min-resolution: 192dpi) {
-    .hero .container {
-      background-image: linear-gradient(
-          rgba(17, 17, 17, 0.4),
-          rgba(17, 17, 17, 0.4)
-        ),
-        url('../images/hero/hero-bg_tab@2x.jpg');
-    }
-  }
-} */
 /*===================benefits===================*/
 .visually-hidden {
     position: absolute;
@@ -531,6 +513,9 @@ header {
 .portfolio-wrapper {
     position: relative;
     overflow: hidden;
+}
+.portfolio-img {
+    margin: 0 auto;
 }
 
 .overlay {
@@ -652,6 +637,7 @@ footer .logo > span {
         flex-direction: row;
         flex-wrap: wrap;
     }
+
     footer .logo {
         display: inline-block;
         margin-right: 0;
@@ -674,6 +660,7 @@ footer .logo > span {
     .footer-text {
         max-width: 264px;
     }
+
     .footer-info {
         margin-right: 24px;
     }
