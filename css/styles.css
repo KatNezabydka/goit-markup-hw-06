@@ -301,8 +301,8 @@ header {
 
     .address {
         display: block;
-        padding: 16px 0;
-        margin-left: auto;
+        padding: 0;
+        margin: auto 0 auto auto;
     }
 }
 
@@ -310,7 +310,6 @@ header {
     .address {
         display: block;
         padding: 0;
-        margin-left: auto;
     }
 }
 
@@ -377,10 +376,12 @@ header {
 
     .address-info {
         padding: 0;
+        font-size: 12px;
     }
 
     .address-list {
         flex-direction: column;
+        font-style: normal;
         gap: 12px;
     }
 }
@@ -388,10 +389,12 @@ header {
 @media only screen and (min-width: 1158px) {
     .address-info {
         padding: 24px 0;
+        font-size: 16px;
     }
 
     .address-list {
         flex-direction: initial;
+        font-style: italic;
         gap: 40px;
     }
 }
