@@ -290,13 +290,26 @@ header {
 }
 
 @media only screen and (min-width: 768px) {
+    .nav {
+        flex-grow: 0;
+    }
+
     .nav-list {
         display: flex;
         gap: 40px;
     }
 
     .address {
-        font-style: normal;
+        display: block;
+        padding: 16px 0;
+        margin-left: auto;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+    .address {
+        display: block;
+        padding: 0;
         margin-left: auto;
     }
 }
@@ -333,7 +346,6 @@ header {
     line-height: 1.5;
     letter-spacing: 0.02em;
     display: block;
-    padding: 24px 0;
 
     transition: var(--animation);
     transition-property: color;
@@ -347,7 +359,6 @@ header {
 
 .address-list {
     display: flex;
-    gap: 40px;
 }
 
 .menu-btn {
@@ -363,10 +374,30 @@ header {
     .menu-btn {
         display: none;
     }
+
+    .address-info {
+        padding: 0;
+    }
+
+    .address-list {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media only screen and (min-width: 1158px) {
+    .address-info {
+        padding: 24px 0;
+    }
+
+    .address-list {
+        flex-direction: initial;
+        gap: 40px;
+    }
 }
 
 /*===================hero===================*/
-.hero .container {
+.hero {
     padding: 72px 0;
     background: var(--grey);
     background-repeat: no-repeat;
@@ -377,30 +408,32 @@ header {
 }
 
 @media (min-resolution: 192dpi) {
-    .hero .container {
+    .hero {
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-mobile@2x.jpg);
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .hero .container {
+    .hero {
         padding: 112px 16px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-tab.jpg);
     }
+
     @media (min-resolution: 192dpi) {
-        .hero .container {
+        .hero {
             background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg-tab@2x.jpg);
         }
     }
 }
 
 @media only screen and (min-width: 1158px) {
-    .hero .container {
+    .hero {
         padding: 188px 16px;
         background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg.jpg);
     }
+
     @media (min-resolution: 192dpi) {
-        .hero .container {
+        .hero {
             background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/hero/hero-bg@2x.jpg);
         }
     }
@@ -424,17 +457,22 @@ header {
     display: none;
 }
 
+.benefits-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--slate);
+}
+
 @media only screen and (min-width: 1158px) {
     .benefits-wrapper {
         display: flex;
     }
-}
 
-.benefits-text {
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.02em;
-    color: var(--slate);
+    .benefits-text {
+        font-weight: 400;
+    }
 }
 
 /*===================team===================*/
@@ -514,6 +552,7 @@ header {
     position: relative;
     overflow: hidden;
 }
+
 .portfolio-img {
     margin: 0 auto;
 }
@@ -571,7 +610,7 @@ header {
 
 .footer {
     background-color: var(--navy-blue);
-    padding: 96px 16px;
+    padding: 96px 0;
 }
 
 .footer .container {
@@ -580,9 +619,10 @@ header {
 }
 
 footer .logo {
-    display: flex;
-    justify-content: center;
+    display: block;
+    text-align: center;
     margin-bottom: 16px;
+    margin-right: 0;
 }
 
 footer .logo > span {
@@ -634,13 +674,13 @@ footer .logo > span {
 
 @media only screen and (min-width: 768px) {
     .footer .container {
+        padding-left: 108px;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
     footer .logo {
         display: inline-block;
-        margin-right: 0;
     }
 
     .footer-caption {
@@ -672,16 +712,19 @@ footer .logo > span {
     }
 
     .footer .container {
+        padding-left: 15px;
         align-items: baseline;
         flex-wrap: unset;
     }
 
     .footer-info {
         margin-right: 120px;
+        margin-bottom: 0;
     }
 
     .footer-wrapper {
         margin-right: 80px;
+        margin-bottom: 0;
     }
 }
 
